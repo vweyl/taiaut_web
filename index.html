@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<title>Taiaut</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content>
-	<meta name="author" content="Olivier Wietrich">
+	<meta name="description" content="Taiaut's website">
+	<meta name="authors" content="Olivier Wietrich - Vincent Weyl">
 	<link rel="stylesheet" href="./css/bootstrap.css" />
 	<style type="text/css">
       body {
@@ -15,75 +15,77 @@
 	</style>
 	<link rel="stylesheet" href="./css/bootstrap-responsive.css" />
 	<link rel="stylesheet" href="./css/docs.css" />
+	<link rel="stylesheet" href="./css/custom.css" />
 </head>
 <body>
 <div class="navtaiaut navtaiaut-fixed-top">
   <div class="navtaiaut-inner">
     <div class="container">
-      <ul class="nav">
-  		<li><a>Home</a></li>
-  		<li><a>Contact</a></li>
-  		<li><a>About</a></li>
-	  </ul>
-	  <ul class="nav pull-right">
-	  	<li>
-	  		<a href="#login">Login</a>
-	  	</li>
-	  </ul>
+    	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        	<span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#"></a>
+        <div class="nav-collapse" data-model="foreach">
+            <ul class="nav">
+            	<li><a data-model="bind:href, value.anchor" data-event="listen:click,show"><span data-model="bind:innerHTML, value.name"></span>Overview</a></li>
+<!--            <li><a href="#applis" data-event="listen:click,show">Applications</a></li>
+            	<li><a href="#svcs" data-event="listen:click,show">Services</a></li>
+            	<li><a href="#techno" data-event="listen:click,show">Technology</a></li>
+            	<li><a href="#contact" data-event="listen:click,show">Contact</a></li> -->
+            </ul>
+          </div><!--/.nav-collapse -->
     </div>
   </div>
 </div>
-  <div class="container">
-	 <div class="hero-unit">
-		 <form class="form-horizontal">
-  			<fieldset>
-  				<div class="control-group">
-           			<label class="control-label" for="prependedInput">Prepended text</label>
-            		<div class="controls">
-              			<div class="input-prepend">
-                			<span class="add-on">@</span>
-               				 <input class="span2" id="prependedInput" size="16" type="text">
-              			</div>
-              			<p class="help-block">Here's some help text</p>
-            		</div>
-         		 </div>
-         		 <div class="control-group">
-         		 	<label class="control-label">
-         		 		Name : 
-         		 	</label>
-         		 	<div class="controls">
-         		 		<input type="text"/>
-         		 		<p class="help-block">Enter name</p>
-         		 	</div>
-         		 </div>	
-  			</fieldset>
-  		</form>
-  		<h1>Heading</h1>
-  		<p>Tagline</p>
-  		<p>
-    		<a class="btn btn-primary btn-large">
-      			Learn more
-    		</a>
-  		</p>
-	</div> 
-<hr class="soften"></hr>
-<div class="marketing">
-	<h1>Une autre idée de l'innovation</h1>
-	<p class="marketing-byline">Innovation for you.</p>
+
+<div id="intro" class="marketing">
+	<hr class="soften"></hr>
+	<img src="img/logo.png"></img>
+	<h1 id="slogan"> "Slogan" </h1>
+	<p>introduction.content.abstract</p>
+	<div id="overview">
+		<span> introduction.approach.list_intro</span>
+		<div class="row">
+			<div class="span3">
+				<h2 style="text-align:center">introduction.content.approach.list.title1</h2>
+				<p>introduction.content.approach.list.text1</p>
+			</div>
+			<div class="span3">
+				<h2 style="text-align:center">introduction.content.approach.list.title2</h2>
+				<p>introduction.content.approach.list.text2</p>			
+			</div>
+			<div class="span3">
+				<h2 style="text-align:center">introduction.content.approach.list.title3</h2>
+				<p>introduction.content.approach.list.text3</p>			
+			</div>
+			<div class="span3">
+				<h2 style="text-align:center">introduction.content.approach.list.title4</h2>
+				<p>introduction.content.approach.list.text4</p>			
+			</div>
+		</div>
+	</div>
+	<hr class="soften"></hr>
 </div>
-	<div class="row">
-		<div class="span3">
-			<h2 style="text-align:center;color:#f3a01e;">Une équipe</h2>
+
+ <div id="main" class="container">
+
+	<div id="docs" class="row">
+		<div id="applis" class="span3">
+			<ul><h2 style="text-align:center;color:#f3a01e;"></h2>
 			<!-- <img style="float:left;" src="/img/concept.png" /> -->
 			<p>Avec Taïaut nous avons voulu tirer et partager les leçons de nos années d'expérience dans l'innovation industrielle. Nous avons retenu les meilleures pratiques et proposons des outils et services pour les améliorer.</p>
+			</ul>
 		</div>
-		<div class="span3">
+		<div id="svcs" class="span3">
 			<h2 style="text-align:center;color:#5a9579;">Un concept</h2>
 			<!-- <img style="float:left;" src="/img/concept.png" /> -->
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec dolor lacus, quis dictum elit. Aliquam suscipit odio a purus porta a pharetra ipsum pulvinar.
 			Etiam bibendum consectetur euismod.</p>
 		</div>
-		<div class="span3">
+		<div id="techno" class="span3">
 			<h2 style="text-align:center;color:#4b8db5;">Des applications</h2>
 			<!-- <img style="float:left;" src="/img/app.png" /> -->
 			<p>
@@ -96,83 +98,61 @@
 			Etiam bibendum consectetur euismod.</p>
 		</div>
 	</div>
-	<hr class="soften"></hr>
-			<div class="subnav">
-		<ul class="nav nav-pills">
-			<li>
-				<a href="">Home</a>
-			</li>
-			<li>
-				<a href="">Test</a>
-			</li>
-			<li>
-				<a href="">Haha</a>
-			</li>
-		</ul>
-	</div>
-	<section id="concept">
-		<div class="page-header">
-			<h1 class="bar-h1 left-only concept-h1">Un concept</h1>
-		</div>
-		<h2>This is a title</h2>
-		<p>Avec Taïaut nous avons voulu tirer et partager les leçons de nos années d'expérience dans l'innovation industrielle. Nous avons retenu les meilleures pratiques et proposons des outils et services pour les améliorer.</p>
-	</section>
-	<section id="application">
-		<div class="page-header">
-			<h1 class="bar-h1 right-only application-h1">Des applications</h1>
-		</div>
-		<p>
-			<img src="http://lorempixum.com/640/400/nature/" alt=""/>
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec dolor lacus, quis dictum elit. Aliquam suscipit odio a purus porta a pharetra ipsum pulvinar.Etiam bibendum consectetur euismod. Duis id dapibus lectus. 
-			Cras feugiat est tincidunt nunc semper sit amet mollis metus tincidunt. Cras accumsan risus ut nisl accumsan id feugiat tellus congue. Quisque quis tincidunt lectus. Ut ac elit sem, sit amet elementum urna. Pellentesque ultricies justo massa. Pellentesque fermentum urna at mauris lobortis id pellentesque turpis placerat.
-		</p>
-	</section>
-	<section id="service">
-		<div class="page-header">
-			<h1 class="bar-h1 left-only service-h1">Des services</h1>
-		</div>
-		<p>
-			<img src="http://lorempixum.com/640/400/nature/" alt=""/>
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec dolor lacus, quis dictum elit. Aliquam suscipit odio a purus porta a pharetra ipsum pulvinar.Etiam bibendum consectetur euismod. Duis id dapibus lectus. 
-			Cras feugiat est tincidunt nunc semper sit amet mollis metus tincidunt. Cras accumsan risus ut nisl accumsan id feugiat tellus congue. Quisque quis tincidunt lectus. Ut ac elit sem, sit amet elementum urna. Pellentesque ultricies justo massa. Pellentesque fermentum urna at mauris lobortis id pellentesque turpis placerat.
-		</p>
-	</section>
-	<!-- <div class="row">
-		<div class="span8">
-			<section id="concept">
-				<div class="page-header">
-					<h1 class="bar-h1 left-only concept-h1">Un concept <small>Ceci est un titre</small></h1>
-				</div>
-				<p>
-					<img src="http://lorempixum.com/640/400/nature/" alt=""/>
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec dolor lacus, quis dictum elit. Aliquam suscipit odio a purus porta a pharetra ipsum pulvinar.
-					Etiam bibendum consectetur euismod. Duis id dapibus lectus. 
-					Cras feugiat est tincidunt nunc semper sit amet mollis metus tincidunt. Cras accumsan risus ut nisl accumsan id feugiat tellus congue. Quisque quis tincidunt lectus. Ut ac elit sem, sit amet elementum urna. Pellentesque ultricies justo massa. Pellentesque fermentum urna at mauris lobortis id pellentesque turpis placerat.
-				</p>
-				<ul>
-			 		<li></li>
-				</ul>
-			</section>
-		</div>
-		</div class="span8">
-			<section id="application">
-				<div class="page-header">
-					<h1 class="bar-h1 right-only application-h1">Des applications</h1>
-				</div>
-			</section>
-		</div>
-
-	</div> -->
+	<hr class="soften"></hr>	
 </div>
-  <script src="js/require.js"></script> 
-  <script src="js/Emily.js"></script>
-  <script src="js/Olives.js"></script>
-  <script src="js/app.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+  	<script src="lib/require.js"></script> 
+  	<script src="/socket.io/socket.io.js"></script>
+  	<script src="lib/Emily.js"></script>
+  	<script src="lib/Olives.js"></script>
+      
+	<script>
+
+    	define("Config", ["Store", "Olives/Transport"], function (Store, Transport) {
+    		// The application's configuration
+
+    		return new Store({
+    			Transport: new Transport(io, location.href),
+    			defaultPage: location.hash.substring(1) || "overview",
+    			titleUI: document.querySelector("div.intro"),
+          		overviewUI: document.querySelector("div.overview"),
+          		applisUI: document.querySelector("div.applis"),
+         		svcsUI: document.querySelector("div.decks"),
+          		technoUI: document.querySelector("div.cards"),
+          		contactUI: document.querySelector("div.sessions"),
+    			navbarUI: document.querySelector("body > div.navtaiaut"),
+    			container: document.querySelector("#main"),
+    			lang: '"FR"'
+    		});
+    		
+    	});
+    	
+    </script>
+    
+	<script src="js/services.js"></script>
+    <script src="js/navigation.js"></script>
+    
+    <script>
+    	require(["Navigation", "Routing", "Config"],
+
+		/**
+		 * The application itself.
+		 * It creates each UI and makes them play together
+		 */
+		function (Navigation, Routing, Config) {
+
+
+			// Init the navigation bar
+			Navigation();
+			
+			// Set the default screen
+			Routing.get(Config.get("defaultPage"));
+
+		});
+
+
+    </script>
+    
 </body>
 </html>

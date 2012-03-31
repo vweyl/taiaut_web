@@ -152,7 +152,7 @@ section {
 /* Faded out hr */
 hr.soften {
   height: 1px;
-  margin: 54px 0;
+  margin: 30px 0;
   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
   background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
   background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
@@ -353,8 +353,9 @@ hr.soften {
 .marketing h2 {
   font-size: 22px;
 }
-.marketing p {
+.marketing p, span {
   margin-right: 10px;
+  margin-left: 10px;
 }
 .marketing .bs-icon {
   float: left;

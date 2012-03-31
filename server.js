@@ -1,39 +1,39 @@
-var http = require('http')
-  , app = http.createServer(handler)
-  , fs = require('fs')
-  , path = require('path')
-  , url = require('url');
+/**
+ * Taïaut website
+ * Copyright(c) 2012 Taïaut
+ * 
+ */
+var urlParse = require("url"),
+	app = require('http').createServer(function (req, res) {
+		
+	var url = urlParse.parse(req.url),
+		file = url.pathname != "/" ? url.pathname : '/index.html',
+		filetype = file.split(".").pop(),
+		types = {"html" : "text/html",
+				 "js" : "text/javascript",
+				 "css": "text/css",
+				 "png": "image/png"};
 
-var mimeTypes = {
-	"html" : "text/html",
-	"js" : "text/javascript",
-	"css"  : "text/css",
-	"png"  : "image/png",
-	"jpeg" : "image/jpeg"
-	};
+  fs.readFile(__dirname + file,
+		  function (err, data) {
+		    if (err) {
+		      res.writeHead(500);
+		      return res.end('Error loading index.html');
+		    }
 
-app.listen(9000);
+		    res.writeHead(200, { 'Content-Type': types[filetype] });
+		    res.end(data);
+		  });
+		}
+).listen(9000),
+io = require('socket.io').listen(app),
+fs = require('fs'),
+http = require('http');
 
-function handler (request, response) {
-    //console.log(request.url);
-    var uri = url.parse(request.url).pathname; 
-    if(uri == "/") uri = "/index.html";
-    var filename = path.join(process.cwd(), "/" + uri);
-    console.log(filename);
-    path.exists(filename, function(exists) {
-    if(!exists) {
-        //console.log("not exists: " + filename);
-        response.writeHead(200, {'Content-Type': 'text/plain'});
-        response.write('404 Not Found\n');
-        response.end();
-        return;
-    }
-    //var mimeType = mimeTypes[path.extname(filename).split(".")[1]];
-    response.writeHead(200, {'Content-Type':mimeTypes[path.extname(filename).split(".")[1]]});
+http.globalAgent.maxSockets = Infinity;
 
-    var fileStream = fs.createReadStream(filename);
-    fileStream.pipe(response);
-
-    }); //end path.exists
-}
-
+// require olives. should be require("olives") once the npm is published
+var olives = require("olives");
+// Register the instance of socket.io
+// This API will change until the final release
+olives.registerSocketIO(io);
