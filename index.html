@@ -43,7 +43,7 @@
             	</li>
             	<li>
             		<a href="#techno" data-event="listen:click,show">
-            			<span data-model="bind:innerHTML, value.content.techno">Technology</span>
+            			<span data-model="bind:innerHTML, 0.value.content.techno">Technology</span>
             		</a>
             	</li>
             	<li>
@@ -84,7 +84,7 @@
 					<p style="padding-top:15px" data-model="bind:innerHTML, 0.value.intro">Services view</p>
 				</div>
 				<div class="techno span4">
-					<h2 style="text-align:center; color:#4b8db5; padding-bottom:15px" data-model="bind:innerHTML, 0.value.title">Nos technologies</h2>
+					<h2 style="text-align:center; color:#7c48b5; padding-bottom:15px" data-model="bind:innerHTML, 0.value.title">Nos technologies</h2>
 					<img id="techno_tile" data-model="bind:src, 0.value.picture_url"></img>
 					<p style="padding-top:15px" data-model="bind:innerHTML, 0.value.intro">tech view</p>
 				</div>
@@ -97,15 +97,15 @@
 			<span data-model="bind:innerHTML, 0.value.content.approach.list_intro" style="font-style: italic" > introduction.approach.list_intro</span>
 			<div class="row" style="padding-top: 20px">
 				<div class="span3">
-					<h2 style="text-align:center; color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title1">introduction.content.approach.list.title1</h2>
+					<h2 style="text-align:center; color:#4b8db5" data-model="bind:innerHTML, 0.value.content.approach.list.title1">introduction.content.approach.list.title1</h2>
 					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text1">introduction.content.approach.list.text1</p>
 				</div>
 				<div class="span3">
-					<h2 style="text-align:center; color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title2">introduction.content.approach.list.title2</h2>
+					<h2 style="text-align:center; color:#f3a01e" data-model="bind:innerHTML, 0.value.content.approach.list.title2">introduction.content.approach.list.title2</h2>
 					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text2">introduction.content.approach.list.text2</p>	
 				</div>
 				<div class="span3">
-					<h2 style="text-align:center; color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title3">introduction.content.approach.list.title3</h2>
+					<h2 style="text-align:center; color:#5a9579" data-model="bind:innerHTML, 0.value.content.approach.list.title3">introduction.content.approach.list.title3</h2>
 					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text3">introduction.content.approach.list.text3</p>	
 				</div>
 				<div class="span3">
@@ -140,6 +140,18 @@
     	define("Config", ["Store", "Olives/Transport"], function (Store, Transport) {
     		// The application's configuration
 
+			// Set default language to visitor's browser language
+			var supported_lang = ["en", "de"],
+				browser_lang = window.navigator.language,
+				website_lang = supported_lang[0];			
+			
+			
+			for (i=0; i<supported_lang.length; i++){
+				if (supported_lang[i] == browser_lang.substring(0,2)) website_lang = supported_lang[i];
+			};
+			
+			console.log(website_lang);
+			
     		return new Store({
     			Transport: new Transport(io, location.href),
     			defaultPage: location.hash.substring(1) || "innovation",
@@ -151,7 +163,7 @@
           		contactUI: document.querySelector("div.contact"),
     			navbarUI: document.querySelector("body > div.navtaiaut"),
     			container: document.querySelector("#main"),
-    			lang: '"FR"'
+    			lang : '"' + website_lang + '"'
     		});
     		
     	});

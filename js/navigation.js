@@ -18,12 +18,9 @@ function (EventPlugin, ModelPlugin, CouchDBStore, OObject, Routing, Config) {
 		    navigation = new OObject(couchDBStore),
 		    lang=Config.get("lang");
   
-
         // Set couchDBStore's transport
         couchDBStore.setTransport(Config.get("Transport"));
         
-        // Adding a Model plugin to navbar UI to bind its dom with its model
-        navigation.plugins.add({"model": new ModelPlugin(navigation.model)});
         
         
         // Synchronize the store with the "library" view
@@ -31,7 +28,6 @@ function (EventPlugin, ModelPlugin, CouchDBStore, OObject, Routing, Config) {
             key:lang
         });
         
-        cdb=navigation.model;
 
 		// The function called by the navigation bar when a menu is clicked
 		navigation.show = function (event, node) {
@@ -48,7 +44,10 @@ function (EventPlugin, ModelPlugin, CouchDBStore, OObject, Routing, Config) {
 		}, navigation);
 		
 		// The dom requires an EventPlugin to handle clicks
-		navigation.plugins.add("event", new EventPlugin(navigation));
+		navigation.plugins.addAll({
+		    "event" : new EventPlugin(navigation),
+		    "model" : new ModelPlugin(navigation.model)
+		   });
 		
 		// And finally create the UI from the dom
 		navigation.alive(Config.get("navbarUI"));

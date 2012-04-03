@@ -24,7 +24,7 @@ img {
                		8px 8px #eee;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	color:#7c48b5;
+	color:#4b8db5;
 }
 
 #applis_tile {
@@ -40,9 +40,9 @@ img {
 }
 
 #techno_tile {
-	box-shadow: 2px 2px 8px #4b8db5;
-	-moz-box-shadow: 2px 2px 8px #4b8db5;
-	-webkit-box-shadow: 2px 2px 8px #4b8db5;
+	box-shadow: 2px 2px 8px #7c48b5;
+	-moz-box-shadow: 2px 2px 8px #7c48b5;
+	-webkit-box-shadow: 2px 2px 8px #7c48b5;
 }
 
 .point {
