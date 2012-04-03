@@ -9,97 +9,125 @@
 	<link rel="stylesheet" href="./css/bootstrap.css" />
 	<style type="text/css">
       body {
-        padding-top: 60px;
-        padding-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
 	</style>
 	<link rel="stylesheet" href="./css/bootstrap-responsive.css" />
 	<link rel="stylesheet" href="./css/docs.css" />
 	<link rel="stylesheet" href="./css/custom.css" />
 </head>
+
 <body>
+	
 <div class="navtaiaut navtaiaut-fixed-top">
   <div class="navtaiaut-inner">
     <div class="container">
-    	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        	<span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </a>
         <a class="brand" href="#"></a>
-        <div class="nav-collapse" data-model="foreach">
+        <div class="nav-collapse">
             <ul class="nav">
-            	<li><a data-model="bind:href, value.anchor" data-event="listen:click,show"><span data-model="bind:innerHTML, value.name"></span>Overview</a></li>
-<!--            <li><a href="#applis" data-event="listen:click,show">Applications</a></li>
-            	<li><a href="#svcs" data-event="listen:click,show">Services</a></li>
-            	<li><a href="#techno" data-event="listen:click,show">Technology</a></li>
-            	<li><a href="#contact" data-event="listen:click,show">Contact</a></li> -->
+            	<li class="active">
+            		<a href="#innovation" data-event="listen:click,show">
+            			<span data-model="bind:innerHTML, 0.value.content.overview">Innovate</span>
+            		</a>
+            	</li>
+	      		<li>
+	      			<a href="#applis" data-event="listen:click,show">
+	      				<span data-model="bind:innerHTML, 0.value.content.applis">Tools</span>
+	      			</a>
+	      		</li>
+	      		<li>
+            		<a href="#svcs" data-event="listen:click,show">
+            			<span data-model="bind:innerHTML, 0.value.content.svcs">Services</span>
+            		</a>
+            	</li>
+            	<li>
+            		<a href="#techno" data-event="listen:click,show">
+            			<span data-model="bind:innerHTML, value.content.techno">Technology</span>
+            		</a>
+            	</li>
+            	<li>
+            		<a href="#contact" data-event="listen:click,show">
+            			<span data-model="bind:innerHTML, value.content.contact">Contact</span>
+            		</a>
+            	</li>
             </ul>
           </div><!--/.nav-collapse -->
     </div>
   </div>
 </div>
 
-<div id="intro" class="marketing">
-	<hr class="soften"></hr>
-	<img src="img/logo.png"></img>
-	<h1 id="slogan"> "Slogan" </h1>
-	<p>introduction.content.abstract</p>
-	<div id="overview">
-		<span> introduction.approach.list_intro</span>
-		<div class="row">
-			<div class="span3">
-				<h2 style="text-align:center">introduction.content.approach.list.title1</h2>
-				<p>introduction.content.approach.list.text1</p>
-			</div>
-			<div class="span3">
-				<h2 style="text-align:center">introduction.content.approach.list.title2</h2>
-				<p>introduction.content.approach.list.text2</p>			
-			</div>
-			<div class="span3">
-				<h2 style="text-align:center">introduction.content.approach.list.title3</h2>
-				<p>introduction.content.approach.list.text3</p>			
-			</div>
-			<div class="span3">
-				<h2 style="text-align:center">introduction.content.approach.list.title4</h2>
-				<p>introduction.content.approach.list.text4</p>			
-			</div>
-		</div>
+<div class="container">
+
+	<div class="intro">
+		<hr class="soften"/>
+		<img data-model="bind:src, 0.value.logo_url"></img>
+		<h1 id="slogan" data-model="bind:innerHTML, 0.value.title"> "Slogan" </h1>
+		<p data-model="bind:innerHTML, 0.value.content.abstract">introduction.content.abstract</p>
+		<hr class="soften"/>
 	</div>
-	<hr class="soften"></hr>
+
+
+
+	<div id="screens">
+		
+		 <div id="main">
+			<div id="docs" class="row">
+				<div class="applis span4">
+					<h2 style="text-align:center; color:#f3a01e; padding-bottom:15px" data-model="bind:innerHTML, 0.value.title">Nos applications</h2>
+					<img id="applis_tile" data-model="bind:src, 0.value.picture_url"></img>
+					<p style="padding-top:15px" data-model="bind:innerHTML, 0.value.intro">Applis view</p>
+				</div>
+				<div class="svcs span4">
+					<h2 style="text-align:center; color:#5a9579; padding-bottom:15px" data-model="bind:innerHTML, 0.value.title">Nos services</h2>
+					<img id="svcs_tile" data-model="bind:src, 0.value.picture_url"></img>
+					<p style="padding-top:15px" data-model="bind:innerHTML, 0.value.intro">Services view</p>
+				</div>
+				<div class="techno span4">
+					<h2 style="text-align:center; color:#4b8db5; padding-bottom:15px" data-model="bind:innerHTML, 0.value.title">Nos technologies</h2>
+					<img id="techno_tile" data-model="bind:src, 0.value.picture_url"></img>
+					<p style="padding-top:15px" data-model="bind:innerHTML, 0.value.intro">tech view</p>
+				</div>
+			</div>
+			<hr class="soften"/>	
+		</div>
+		
+		
+		<div class="innovation">
+			<span data-model="bind:innerHTML, 0.value.content.approach.list_intro" style="font-style: italic" > introduction.approach.list_intro</span>
+			<div class="row" style="padding-top: 20px">
+				<div class="span3">
+					<h2 style="text-align:center; color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title1">introduction.content.approach.list.title1</h2>
+					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text1">introduction.content.approach.list.text1</p>
+				</div>
+				<div class="span3">
+					<h2 style="text-align:center; color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title2">introduction.content.approach.list.title2</h2>
+					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text2">introduction.content.approach.list.text2</p>	
+				</div>
+				<div class="span3">
+					<h2 style="text-align:center; color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title3">introduction.content.approach.list.title3</h2>
+					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text3">introduction.content.approach.list.text3</p>	
+				</div>
+				<div class="span3">
+					<h2 style="text-align:center; color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title4">introduction.content.approach.list.title4</h2>
+					<p class="point" data-model="bind:innerHTML, 0.value.content.approach.list.text4">introduction.content.approach.list.text4</p>	
+				</div>
+			</div>
+			<hr class="soften"/>
+		</div>	
+
+ 		<div id="applis_details">	
+		</div>
+		
+		<div id="svcs_details">	
+		</div>
+		
+		<div id="techno_details">	
+		</div>
+		
+	</div>
 </div>
 
- <div id="main" class="container">
-
-	<div id="docs" class="row">
-		<div id="applis" class="span3">
-			<ul><h2 style="text-align:center;color:#f3a01e;"></h2>
-			<!-- <img style="float:left;" src="/img/concept.png" /> -->
-			<p>Avec Taïaut nous avons voulu tirer et partager les leçons de nos années d'expérience dans l'innovation industrielle. Nous avons retenu les meilleures pratiques et proposons des outils et services pour les améliorer.</p>
-			</ul>
-		</div>
-		<div id="svcs" class="span3">
-			<h2 style="text-align:center;color:#5a9579;">Un concept</h2>
-			<!-- <img style="float:left;" src="/img/concept.png" /> -->
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec dolor lacus, quis dictum elit. Aliquam suscipit odio a purus porta a pharetra ipsum pulvinar.
-			Etiam bibendum consectetur euismod.</p>
-		</div>
-		<div id="techno" class="span3">
-			<h2 style="text-align:center;color:#4b8db5;">Des applications</h2>
-			<!-- <img style="float:left;" src="/img/app.png" /> -->
-			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec dolor lacus, quis dictum elit. Aliquam suscipit odio a purus porta a pharetra ipsum pulvinar.
-			Etiam bibendum consectetur euismod.</p>
-		</div>
-		<div class="span3">
-			<h2 style="text-align:center;color:#7c48b5;">Des services</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec dolor lacus, quis dictum elit. Aliquam suscipit odio a purus porta a pharetra ipsum pulvinar.
-			Etiam bibendum consectetur euismod.</p>
-		</div>
-	</div>
-	<hr class="soften"></hr>	
-</div>
     <script src="lib/jquery.js"></script>
     <script src="lib/bootstrap.min.js"></script>
   	<script src="lib/require.js"></script> 
@@ -114,13 +142,13 @@
 
     		return new Store({
     			Transport: new Transport(io, location.href),
-    			defaultPage: location.hash.substring(1) || "overview",
-    			titleUI: document.querySelector("div.intro"),
-          		overviewUI: document.querySelector("div.overview"),
-          		applisUI: document.querySelector("div.applis"),
-         		svcsUI: document.querySelector("div.decks"),
-          		technoUI: document.querySelector("div.cards"),
-          		contactUI: document.querySelector("div.sessions"),
+    			defaultPage: location.hash.substring(1) || "innovation",
+    			introUI: document.querySelector(".intro"),
+          		innovationUI: document.querySelector(".innovation"),
+          		applisUI: document.querySelector(".applis"),
+         		svcsUI: document.querySelector(".svcs"),
+          		technoUI: document.querySelector(".techno"),
+          		contactUI: document.querySelector("div.contact"),
     			navbarUI: document.querySelector("body > div.navtaiaut"),
     			container: document.querySelector("#main"),
     			lang: '"FR"'
@@ -132,15 +160,20 @@
     
 	<script src="js/services.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/introduction.js"></script>
+    <script src="js/innovation.js"></script>
+    <script src="js/applications.js"></script>
+    <script src="js/svcs.js"></script>
+    <script src="js/techno.js"></script>
     
     <script>
-    	require(["Navigation", "Routing", "Config"],
+    	require(["Navigation", "Introduction", "Innovation", "Applications", "Svcs", "Techno", "Routing", "Config"],
 
 		/**
 		 * The application itself.
 		 * It creates each UI and makes them play together
 		 */
-		function (Navigation, Routing, Config) {
+		function (Navigation, Introduction, Innovation, Applications, Svcs, Techno, Routing, Config) {
 
 
 			// Init the navigation bar
@@ -148,6 +181,21 @@
 			
 			// Set the default screen
 			Routing.get(Config.get("defaultPage"));
+			
+			// Display the logo, slogan, website introduction 
+			Introduction();
+			
+			// Display innovation content
+			Innovation();
+			
+			// Display the applications tile
+			Applications();
+			
+			// Display the svcs tile
+			Svcs();
+			
+			// Display the techno tile
+			Techno();
 
 		});
 

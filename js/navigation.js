@@ -5,7 +5,7 @@
  */
 define("Navigation", ["Olives/Event-plugin", "Olives/Model-plugin", "CouchDBStore", "Olives/OObject", "Routing", "Config"],
 		
-function (ModelPlugin, EventPlugin, OObject, CouchDBStore, Routing, Config) {
+function (EventPlugin, ModelPlugin, CouchDBStore, OObject, Routing, Config) {
 	
 	/**
 	 * Defines the navigation bar UI
@@ -16,24 +16,22 @@ function (ModelPlugin, EventPlugin, OObject, CouchDBStore, Routing, Config) {
 		// An OObject based UI built from a CouchDBStore
 		var couchDBStore = new CouchDBStore(),
 		    navigation = new OObject(couchDBStore),
-		    lang = Config.get("lang");
-		    
-		    
-		console.log(lang);   
+		    lang=Config.get("lang");
+  
 
         // Set couchDBStore's transport
         couchDBStore.setTransport(Config.get("Transport"));
         
-        // Adding a Model plugin to listIdeas UI to bind it's dom with it's model
+        // Adding a Model plugin to navbar UI to bind its dom with its model
         navigation.plugins.add({"model": new ModelPlugin(navigation.model)});
+        
         
         // Synchronize the store with the "library" view
         navigation.model.sync("website", "homepage", "navbar", {
-            startkey: [lang],
-            endkey: [lang, {}]
+            key:lang
         });
-
-cdb=couchDBStore;
+        
+        cdb=navigation.model;
 
 		// The function called by the navigation bar when a menu is clicked
 		navigation.show = function (event, node) {

@@ -12,6 +12,7 @@ img {
 }
 
 #slogan {
+	text-align: center;
 	text-shadow:   	1px 0px #eee, 0px 1px #ccc,
                		2px 1px #eee, 1px 2px #ccc,
                		3px 2px #eee, 2px 3px #ccc,
@@ -21,4 +22,36 @@ img {
                		7px 6px #eee, 6px 7px #ccc,
                		8px 7px #eee, 7px 8px #ccc,
                		8px 8px #eee;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color:#7c48b5;
+}
+
+#applis_tile {
+	box-shadow: 2px 2px 8px #f3a01e;
+	-moz-box-shadow: 2px 2px 8px #f3a01e;
+	-webkit-box-shadow: 2px 2px 8px #f3a01e;
+}
+
+#svcs_tile {
+	box-shadow: 2px 2px 8px #5a9579;
+	-moz-box-shadow: 2px 2px 8px #5a9579;
+	-webkit-box-shadow: 2px 2px 8px #5a9579;
+}
+
+#techno_tile {
+	box-shadow: 2px 2px 8px #4b8db5;
+	-moz-box-shadow: 2px 2px 8px #4b8db5;
+	-webkit-box-shadow: 2px 2px 8px #4b8db5;
+}
+
+.point {
+	padding-top: 20px;
+	text-align: justify;
+}
+
+.mpoint {
+	padding-top: 20px;
+	text-align: justify;
+	border-right: thick #ff0000;
 }
