@@ -50,16 +50,16 @@ function (OObject, CouchDBStore, ModelPlugin, EventPlugin, Config, Screens, Rout
         svcsDetails.alive(Config.get("svcsDetailsUI"));
         
         
-        // Declare an svcsDetails route for displaying the applisDetails UI
+        // Declare an svcsDetails route for displaying the svcsDetails UI
         Routing.set("svcsDetails", function () {
         Screens.show("svcsDetails");
         });
             
-        // Declare the applisDetails UI
+        // Declare the svcsDetails UI
         Screens.add("svcsDetails", svcsDetails);
         
 
-        // And return the new innovation UI
+        // And return the new svcsDetails UI
         return svcsDetails;
     };
     

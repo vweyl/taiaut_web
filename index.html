@@ -111,7 +111,9 @@
  			</div>		
 		</div>
 		
-		<div class="technoDetails">	
+		<div class="technoDetails">
+				<img src="img/techno_cloud_large.png"/>
+				<p data-model="bind:innerHTML, 0.value.content" style="margin-top: 30px">Technology description</p>
 		</div>
 		
 	</div>
@@ -138,7 +140,7 @@
 </div>
 <hr class="soften"/>
 <div class="footer">
-	
+	<p style="text-align: center">© 2012 Taïaut SAS - All rights reserved</p>
 </div>
 
     <script src="lib/jquery.js"></script>
@@ -193,15 +195,16 @@
     <script src="js/techno.js"></script>
     <script src="js/applisdetails.js"></script>
     <script src="js/svcsdetails.js"></script>
+    <script src="js/technodetails.js"></script>
     
     <script>
-    	require(["Navigation", "Innovation", "Applications", "Svcs", "Techno","ApplisDetails", "SvcsDetails", "Routing", "Config"],
+    	require(["Navigation", "Innovation", "Applications", "Svcs", "Techno","ApplisDetails", "SvcsDetails", "TechnoDetails", "Routing", "Config"],
 
 		/**
 		 * The application itself.
 		 * It creates each UI and makes them play together
 		 */
-		function (Navigation, Innovation, Applications, Svcs, Techno, ApplisDetails, SvcsDetails, Routing, Config) {
+		function (Navigation, Innovation, Applications, Svcs, Techno, ApplisDetails, SvcsDetails, TechnoDetails, Routing, Config) {
 
 
 			// Init the navigation bar
@@ -213,8 +216,11 @@
 			// Display application content
 			ApplisDetails();
 			
-			// Display application content
+			// Display services content
 			SvcsDetails();
+			
+			// Display technology content
+			TechnoDetails();
 			
 			// Display the applications tile
 			Applications();

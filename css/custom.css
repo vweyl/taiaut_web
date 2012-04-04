@@ -79,3 +79,12 @@ img {
 	text-align:center;
 	font-size: 16px;
 }
+
+.technoDetails img{
+	width: 66%;
+	height: auto;
+	padding: 30px;
+	box-shadow: 2px 2px 8px #777777;
+	-moz-box-shadow: 2px 2px 8px #777777;
+	-webkit-box-shadow: 2px 2px 8px #777777;
+}

@@ -38,7 +38,7 @@ function (OObject, CouchDBStore, ModelPlugin, EventPlugin, Config, Screens, Rout
         applisList.setTransport(Config.get("Transport"));
  
                 
-        // Synchronize the store with the "overview" view
+        // Synchronize the store with the "applis" view
         couchDBStore.sync("website", "homepage", "applis", {
             key: lang
         }).then(function(){
@@ -60,7 +60,7 @@ function (OObject, CouchDBStore, ModelPlugin, EventPlugin, Config, Screens, Rout
         Screens.add("applisDetails", applisDetails);
         
 
-        // And return the new innovation UI
+        // And return the new applisDetails UI
         return applisDetails;
     };
     
