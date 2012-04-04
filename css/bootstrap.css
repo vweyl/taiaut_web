@@ -139,7 +139,7 @@ a:hover {
   width: 60px;
 }
 .span2 {
-  width: 140px;
+  width: 155px;
 }
 .span3 {
   width: 220px;
@@ -724,7 +724,7 @@ input.span1, textarea.span1, .uneditable-input.span1 {
   width: 50px;
 }
 input.span2, textarea.span2, .uneditable-input.span2 {
-  width: 130px;
+  width: 125px;
 }
 input.span3, textarea.span3, .uneditable-input.span3 {
   width: 210px;

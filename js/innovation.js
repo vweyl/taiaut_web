@@ -3,9 +3,9 @@
  * Copyright(c) 2012 Taïaut
  * 
  */
-define("Innovation", ["Olives/OObject", "CouchDBStore", "Olives/Model-plugin", "Config"], 
+define("Innovation", ["Olives/OObject", "CouchDBStore", "Olives/Model-plugin", "Olives/Event-plugin", "Config", "Screens", "Routing"], 
         
-function (OObject, CouchDBStore, ModelPlugin, Config) {
+function (OObject, CouchDBStore, ModelPlugin, EventPlugin, Config, Screens, Routing) {
     
     /**
      * Defines the innovationUI.
@@ -23,8 +23,11 @@ function (OObject, CouchDBStore, ModelPlugin, Config) {
             innovation = new OObject(couchDBStore);
         
         // Adding a Model plugin to innovation UI to bind its dom with its model
-        innovation.plugins.add("model", new ModelPlugin(innovation.model));
-
+        innovation.plugins.addAll({
+            "model": new ModelPlugin(innovation.model),
+            "event": new EventPlugin(innovation)
+        });
+        
         // Set couchDBStore's transport
         couchDBStore.setTransport(Config.get("Transport"));
  
@@ -39,14 +42,14 @@ function (OObject, CouchDBStore, ModelPlugin, Config) {
         innovation.alive(Config.get("innovationUI"));
         
         
-        /** Declare an introduction route for displaying the intro
-        *   Routing.set("intro", function () {
-        *   Screens.show("intro");
-        *   });
-        *    
-        *   // Declare the introduction UI
-        *   Screens.add("introUI", introduction);
-        **/
+        // Declare an innovation route for displaying the innovation UI
+        Routing.set("innovation", function () {
+        Screens.show("innovation");
+        });
+            
+        // Declare the introduction UI
+        Screens.add("innovation", innovation);
+        
 
         // And return the new innovation UI
         return innovation;

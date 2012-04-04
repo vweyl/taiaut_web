@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Taiaut</title>
+	<title>Taiaut:Innovation for U</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Taiaut's website">
 	<meta name="authors" content="Olivier Wietrich - Vincent Weyl">
@@ -20,112 +20,125 @@
 
 <body>
 	
-<div class="navtaiaut navtaiaut-fixed-top">
-  <div class="navtaiaut-inner">
-    <div class="container">
-        <a class="brand" href="#"></a>
-        <div class="nav-collapse">
-            <ul class="nav">
-            	<li class="active">
-            		<a href="#innovation" data-event="listen:click,show">
-            			<span data-model="bind:innerHTML, 0.value.content.overview">Innovate</span>
-            		</a>
-            	</li>
-	      		<li>
-	      			<a href="#applis" data-event="listen:click,show">
-	      				<span data-model="bind:innerHTML, 0.value.content.applis">Tools</span>
-	      			</a>
-	      		</li>
-	      		<li>
-            		<a href="#svcs" data-event="listen:click,show">
-            			<span data-model="bind:innerHTML, 0.value.content.svcs">Services</span>
-            		</a>
-            	</li>
-            	<li>
-            		<a href="#techno" data-event="listen:click,show">
-            			<span data-model="bind:innerHTML, 0.value.content.techno">Technology</span>
-            		</a>
-            	</li>
-            	<li>
-            		<a href="#contact" data-event="listen:click,show">
-            			<span data-model="bind:innerHTML, value.content.contact">Contact</span>
-            		</a>
-            	</li>
-            </ul>
-          </div><!--/.nav-collapse -->
-    </div>
-  </div>
-</div>
+	<div class="navtaiaut navtaiaut-fixed-top">
+  		<div class="navtaiaut-inner">
+    		<div class="container">
+        		<div class="nav-collapse">
+            		<ul class="nav">
+            			<li><a class="brand" href="#"><img style="height:25px; width: auto; padding-left:10px" src="img/logo.png" href="#"/></a></li>
+            			<li class="active">
+            				<a href="#innovation" data-event="listen:click,show">
+            					<span data-model="bind:innerHTML, 0.value.content.overview">Innovate</span>
+            				</a>
+            			</li>
+	      				<li>
+	      					<a href="#applisDetails" data-event="listen:click,show">
+	      						<span data-model="bind:innerHTML, 0.value.content.applis">Tools</span>
+	      					</a>
+	      				</li>
+	      				<li>
+            				<a href="#svcsDetails" data-event="listen:click,show">
+            					<span data-model="bind:innerHTML, 0.value.content.svcs">Services</span>
+            				</a>
+            			</li>
+            			<li>
+            				<a href="#technoDetails" data-event="listen:click,show">
+            					<span data-model="bind:innerHTML, 0.value.content.techno">Technology</span>
+            				</a>
+            			</li>
+            			<li>
+            				<a href="#contact" data-event="listen:click,show">
+            					<span data-model="bind:innerHTML, value.content.contact">Contact</span>
+            				</a>
+            			</li>
+            		</ul>
+          		</div><!--/.nav-collapse -->
+    		</div>
+  		</div>	
+	</div>
+
+
+<hr class="soften"/>
 
 <div class="container">
 
-	<div class="intro">
-		<hr class="soften"/>
-		<img data-model="bind:src, 0.value.logo_url"></img>
-		<h1 id="slogan" data-model="bind:innerHTML, 0.value.title"> "Slogan" </h1>
-		<p data-model="bind:innerHTML, 0.value.content.abstract">introduction.content.abstract</p>
-		<hr class="soften"/>
-	</div>
-
-
-
-	<div id="screens">
-		
-		 <div id="main">
-			<div id="docs" class="row">
-				<div class="applis span4">
-					<h2 style="text-align:center; color:#f3a01e; padding-bottom:15px" data-model="bind:innerHTML, 0.value.title">Nos applications</h2>
-					<img id="applis_tile" data-model="bind:src, 0.value.picture_url"></img>
-					<p style="padding-top:15px" data-model="bind:innerHTML, 0.value.intro">Applis view</p>
-				</div>
-				<div class="svcs span4">
-					<h2 style="text-align:center; color:#5a9579; padding-bottom:15px" data-model="bind:innerHTML, 0.value.title">Nos services</h2>
-					<img id="svcs_tile" data-model="bind:src, 0.value.picture_url"></img>
-					<p style="padding-top:15px" data-model="bind:innerHTML, 0.value.intro">Services view</p>
-				</div>
-				<div class="techno span4">
-					<h2 style="text-align:center; color:#7c48b5; padding-bottom:15px" data-model="bind:innerHTML, 0.value.title">Nos technologies</h2>
-					<img id="techno_tile" data-model="bind:src, 0.value.picture_url"></img>
-					<p style="padding-top:15px" data-model="bind:innerHTML, 0.value.intro">tech view</p>
-				</div>
-			</div>
-			<hr class="soften"/>	
-		</div>
-		
+	<div id="screens" class="container">	
 		
 		<div class="innovation">
-			<span data-model="bind:innerHTML, 0.value.content.approach.list_intro" style="font-style: italic" > introduction.approach.list_intro</span>
-			<div class="row" style="padding-top: 20px">
-				<div class="span3">
-					<h2 style="text-align:center; color:#4b8db5" data-model="bind:innerHTML, 0.value.content.approach.list.title1">introduction.content.approach.list.title1</h2>
-					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text1">introduction.content.approach.list.text1</p>
-				</div>
-				<div class="span3">
-					<h2 style="text-align:center; color:#f3a01e" data-model="bind:innerHTML, 0.value.content.approach.list.title2">introduction.content.approach.list.title2</h2>
-					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text2">introduction.content.approach.list.text2</p>	
-				</div>
-				<div class="span3">
-					<h2 style="text-align:center; color:#5a9579" data-model="bind:innerHTML, 0.value.content.approach.list.title3">introduction.content.approach.list.title3</h2>
-					<p class="mpoint" data-model="bind:innerHTML, 0.value.content.approach.list.text3">introduction.content.approach.list.text3</p>	
-				</div>
-				<div class="span3">
-					<h2 style="text-align:center; color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title4">introduction.content.approach.list.title4</h2>
-					<p class="point" data-model="bind:innerHTML, 0.value.content.approach.list.text4">introduction.content.approach.list.text4</p>	
-				</div>
-			</div>
+			<!-- <img data-model="bind:src, 0.value.logo_url"></img> -->
+			<h1 id="slogan" data-model="bind:innerHTML, 0.value.title"> "Slogan" </h1>
+			<p style="text-align: justify; padding-top:5px" data-model="bind:innerHTML, 0.value.content.abstract">introduction.content.abstract</p>
 			<hr class="soften"/>
+			
+			<span data-model="bind:innerHTML, 0.value.content.approach.list_intro" style="font-style: italic" > introduction.approach.list_intro</span>
+			<!-- <div class="row" style="padding-top: 20px"> -->
+			<h3 class="innotitle" style="padding-top:10px; color:#4b8db5" data-model="bind:innerHTML, 0.value.content.approach.list.title1">introduction.content.approach.list.title1</h2>
+			<p class="point" data-model="bind:innerHTML, 0.value.content.approach.list.text1">introduction.content.approach.list.text1</p>
+			
+			<h3 class="innotitle" style="color:#f3a01e" data-model="bind:innerHTML, 0.value.content.approach.list.title2">introduction.content.approach.list.title2</h2>
+			<p class="point" data-model="bind:innerHTML, 0.value.content.approach.list.text2">introduction.content.approach.list.text2</p>	
+
+			<h3 class="innotitle" style="color:#5a9579" data-model="bind:innerHTML, 0.value.content.approach.list.title3">introduction.content.approach.list.title3</h2>
+			<p class="point" data-model="bind:innerHTML, 0.value.content.approach.list.text3">introduction.content.approach.list.text3</p>	
+
+			<h3 class="innotitle" style="color:#7c48b5" data-model="bind:innerHTML, 0.value.content.approach.list.title4">introduction.content.approach.list.title4</h2>
+			<p class="point" data-model="bind:innerHTML, 0.value.content.approach.list.text4">introduction.content.approach.list.text4</p>	
 		</div>	
 
- 		<div id="applis_details">	
+ 		<div class="applisDetails" data-model="foreach">
+ 			<div>
+ 				<h4 style="text-align: center" data-model="bind:innerHTML, doc.title"></h4>
+ 				<p data-model="bind:innerHTML, doc.release_date" style="font-style: italic; text-align: center">Released on</p>
+  				<span data-model="bind:innerHTML, doc.benefits_intro" style="font-style: italic">Benefits</span>
+ 				<p data-model="bind:innerHTML, doc.benefits">list of benefits</p>
+ 				<img style="width=150px; height: auto" src=""></img>
+ 				<div class="features">
+ 					<span data-model="bind:innerHTML, doc.features_intro" style="font-style: italic">Features</span>
+ 					<p data-model="bind:innerHTML, doc.features" style="width:66%; padding-top: 5px">Key features</p>
+ 					<a data-model="bind:href, doc.hyperlink"><p data-model="bind:innerHTML, doc.hyperlink_text" style="text-align: center"></p></a>
+ 				</div>
+ 				<hr class="soften"/>
+ 			</div>	
 		</div>
 		
-		<div id="svcs_details">	
+		<div class="svcsDetails" data-model="foreach">
+ 			<div>
+ 				<h4 style="text-align: center; padding-bottom: 10px" data-model="bind:innerHTML, doc.title"></h4>
+ 				<p data-model="bind:innerHTML, doc.description" style="width: 60%; text-align: justify">Service description</p>
+ 				<img style="width=250px; float: right; height: auto" src=""></img>
+ 				<a data-model="bind:href, doc.hyperlink"><p data-model="bind:innerHTML, doc.hyperlink_text" style="text-align: center"></p></a>
+ 				<hr class="soften"/>
+ 			</div>		
 		</div>
 		
-		<div id="techno_details">	
+		<div class="technoDetails">	
 		</div>
 		
 	</div>
+
+		
+	<div id="highlights" class="container">
+		<div class="applis">
+			<h2 class="sectionhead" style="color:#f3a01e" data-model="bind:innerHTML, 0.value.title">Nos applications</h2>
+			<img id="applis_tile" data-model="bind:src, 0.value.picture_url"></img>
+			<p class="piclegend" data-model="bind:innerHTML, 0.value.intro">Applis view</p>
+		</div>	
+		<div class="svcs">
+			<h2 class="sectionhead" style="color:#5a9579" data-model="bind:innerHTML, 0.value.title">Nos services</h2>
+			<img id="svcs_tile" data-model="bind:src, 0.value.picture_url"></img>
+			<p class="piclegend" data-model="bind:innerHTML, 0.value.intro">Services view</p>
+		</div>
+		<div class="techno">					
+			<h2 class="sectionhead" style="color:#7c48b5" data-model="bind:innerHTML, 0.value.title">Nos technologies</h2>
+			<img id="techno_tile" data-model="bind:src, 0.value.picture_url"></img>
+			<p class="piclegend" data-model="bind:innerHTML, 0.value.intro">tech view</p>
+		</div>	
+	</div>
+		
+</div>
+<hr class="soften"/>
+<div class="footer">
+	
 </div>
 
     <script src="lib/jquery.js"></script>
@@ -155,14 +168,16 @@
     		return new Store({
     			Transport: new Transport(io, location.href),
     			defaultPage: location.hash.substring(1) || "innovation",
-    			introUI: document.querySelector(".intro"),
           		innovationUI: document.querySelector(".innovation"),
           		applisUI: document.querySelector(".applis"),
          		svcsUI: document.querySelector(".svcs"),
           		technoUI: document.querySelector(".techno"),
           		contactUI: document.querySelector("div.contact"),
+          		applisDetailsUI: document.querySelector(".applisDetails"),
+          		svcsDetailsUI: document.querySelector(".svcsDetails"),
+          		technoDetailsUI: document.querySelector(".technoDetails"),
     			navbarUI: document.querySelector("body > div.navtaiaut"),
-    			container: document.querySelector("#main"),
+    			container: document.querySelector("#screens"),
     			lang : '"' + website_lang + '"'
     		});
     		
@@ -172,33 +187,34 @@
     
 	<script src="js/services.js"></script>
     <script src="js/navigation.js"></script>
-    <script src="js/introduction.js"></script>
     <script src="js/innovation.js"></script>
     <script src="js/applications.js"></script>
     <script src="js/svcs.js"></script>
     <script src="js/techno.js"></script>
+    <script src="js/applisdetails.js"></script>
+    <script src="js/svcsdetails.js"></script>
     
     <script>
-    	require(["Navigation", "Introduction", "Innovation", "Applications", "Svcs", "Techno", "Routing", "Config"],
+    	require(["Navigation", "Innovation", "Applications", "Svcs", "Techno","ApplisDetails", "SvcsDetails", "Routing", "Config"],
 
 		/**
 		 * The application itself.
 		 * It creates each UI and makes them play together
 		 */
-		function (Navigation, Introduction, Innovation, Applications, Svcs, Techno, Routing, Config) {
+		function (Navigation, Innovation, Applications, Svcs, Techno, ApplisDetails, SvcsDetails, Routing, Config) {
 
 
 			// Init the navigation bar
 			Navigation();
 			
-			// Set the default screen
-			Routing.get(Config.get("defaultPage"));
-			
-			// Display the logo, slogan, website introduction 
-			Introduction();
-			
 			// Display innovation content
 			Innovation();
+			
+			// Display application content
+			ApplisDetails();
+			
+			// Display application content
+			SvcsDetails();
 			
 			// Display the applications tile
 			Applications();
@@ -208,6 +224,9 @@
 			
 			// Display the techno tile
 			Techno();
+			
+			// Set the default screen
+			Routing.get(Config.get("defaultPage"));
 
 		});
 

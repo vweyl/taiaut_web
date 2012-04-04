@@ -9,6 +9,8 @@
 img {
 	display: block;
 	margin: 0 auto;
+	width: 125px;
+	height: auto;
 }
 
 #slogan {
@@ -22,9 +24,20 @@ img {
                		7px 6px #eee, 6px 7px #ccc,
                		8px 7px #eee, 7px 8px #ccc,
                		8px 8px #eee;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	color:#4b8db5;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color:#777777;
+}
+
+#screens {
+	width:70%;
+	float:left;
+}
+
+#highlights{
+	width:25%;
+	float:right;
+	border-left: inset 2px #F9F9F9;
 }
 
 #applis_tile {
@@ -46,12 +59,23 @@ img {
 }
 
 .point {
-	padding-top: 20px;
+	padding-top: 10px;
 	text-align: justify;
 }
 
-.mpoint {
-	padding-top: 20px;
-	text-align: justify;
-	border-right: thick #ff0000;
+.piclegend{
+	padding-top:15px;
+	padding-left: 15px;
+	text-align: center;
+}
+
+.sectionhead{
+	text-align:center;
+	padding-bottom:15px;
+	font-size: 20px;
+}
+
+.innotitle{
+	text-align:center;
+	font-size: 16px;
 }
