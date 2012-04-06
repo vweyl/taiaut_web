@@ -1,0 +1,44 @@
+/*!
+ * Taïaut custom css
+ *
+ * Copyright 2012 Taïaut
+ *
+ * 
+ */
+
+img {
+	display: block;
+	margin: 0 auto;
+	width: 400px;
+	height: auto;
+	padding: 30px;
+	box-shadow: 2px 2px 8px #777777;
+	-moz-box-shadow: 2px 2px 8px #777777;
+	-webkit-box-shadow: 2px 2px 8px #777777;
+}
+
+.slogan {
+	text-align: center;
+	text-shadow:   	1px 0px #eee, 0px 1px #ccc,
+               		2px 1px #eee, 1px 2px #ccc,
+               		3px 2px #eee, 2px 3px #ccc,
+               		4px 3px #eee, 3px 4px #ccc,
+               		5px 4px #eee, 4px 5px #ccc,
+               		6px 5px #eee, 5px 6px #ccc,
+               		7px 6px #eee, 6px 7px #ccc,
+               		8px 7px #eee, 7px 8px #ccc,
+               		8px 8px #eee;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	color:#777777;
+}
+
+
+.contact{
+	padding-top: 30px;
+	margin-bottom: 30px;
+	text-align:center;
+	font-size: 16px;
+	color:#333333;
+}
+
